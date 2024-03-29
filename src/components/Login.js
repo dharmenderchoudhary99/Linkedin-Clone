@@ -84,6 +84,7 @@ const SignIn = styled.a`
     cursor: pointer;
     color: #0a66c2;
     text-decoration: none;
+    
   }
 `;
 
