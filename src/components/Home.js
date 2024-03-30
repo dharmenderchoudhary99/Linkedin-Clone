@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import Leftside from "./LeftSide";
+import Rightside from "./RightSide";
+import Main from "./Main";
+
 
 const Home = (props) => {
   return (
@@ -11,9 +15,9 @@ const Home = (props) => {
         <p> Find Talented pros in record time</p>
       </Section>
       <LayOut>
-        <div>Left Side</div>
-        <div>Mid</div>
-        <div>Right Side</div>
+        <Leftside/>
+        <Main/>
+        <Rightside/>
       </LayOut>
     </Container>
   );
@@ -72,6 +76,8 @@ const LayOut = styled.div`
     flex-direction: column;
     padding: 0 5px;
   }
+
+
 `;
 
 export default Home;
