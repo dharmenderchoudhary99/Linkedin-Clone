@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Leftside from "./LeftSide";
-import Rightside from "./RightSide";
+import LeftSide from "./LeftSide";
+import RightSide from "./RightSide";
 import Main from "./Main";
 
 
@@ -15,9 +15,9 @@ const Home = (props) => {
         <p> Find Talented pros in record time</p>
       </Section>
       <LayOut>
-        <Leftside/>
+        <LeftSide/>
         <Main/>
-        <Rightside/>
+        <RightSide/>
       </LayOut>
     </Container>
   );
@@ -63,21 +63,20 @@ const Section = styled.div`
 `;
 
 const LayOut = styled.div`
-  display: grid;
-  grid-template-areas: "leftside main rightside";
-  grid-template-columns: minmax(0, 5fr) minmax(0, 12fr) minmax(0, 7fr);
-  column-gap: 25px;
-  row-gap: 25px;
-  /* grid-template-rows: auto; */
-  margin: 25px;
+ display: grid;
+ grid-template-areas: 
+    "leftside main rightside";
+ grid-template-columns: 
+    minmax(0, 5fr) minmax(0, 12fr) minmax(0, 7fr);
+ column-gap: 25px;
+ row-gap: 25px;
+ margin: 25px;
 
-  @media(max-width: 768px) {
+ @media(max-width: 768px) {
     display: flex;
     flex-direction: column;
     padding: 0 5px;
-  }
-
-
+ }
 `;
 
 export default Home;
