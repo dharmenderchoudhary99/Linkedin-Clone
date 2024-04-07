@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { connect } from "react-redux"
+import { connect } from "react-redux";
+import { signInAPI } from "../actions";
 
 const Login = (props) => {
   return (
@@ -85,7 +86,6 @@ const SignIn = styled.a`
     cursor: pointer;
     color: #0a66c2;
     text-decoration: none;
-    
   }
 `;
 
@@ -145,7 +145,6 @@ const Form = styled.div`
   @media (max-width: 768px) {
     margin-top: 20px;
   }
-  
 `;
 
 const Google = styled.button`
@@ -164,16 +163,16 @@ const Google = styled.button`
   transition-duration: 167ms;
   font-size: 20px;
   color: rgba(0, 0, 0, 0.6);
-  &:hover{
+  &:hover {
     background-color: rgba(207, 207, 207, 0.25);
     color: rgba(0, 0, 0, 0.75);
   }
 `;
 
-const mapStateToProps = (state)=>{
-return {};
-}
+const mapStateToProps = (state) => {
+  return {};
+};
 
-const mapDispatchToProps = (dispatch) =>({});
+const mapDispatchToProps = (dispatch) => ({});
 
-export default connect(mapStateToProps,mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
