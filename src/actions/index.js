@@ -2,7 +2,6 @@ import { auth, provider, storage } from "../firebase";
 import db from "../firebase";
 import { SET_USER } from "./actionType";
 
-
 export const setUser = (payload) => ({
   type: SET_USER,
   user: payload,
@@ -61,8 +60,33 @@ export function postArticleAPI(payload) {
         (error) => console.log(error.code),
         async () => {
           const downloadURL = await upload.snapshot.ref.getDownloadURL();
+          db.collection("article").add({
+            actor: {
+              description: payload.user.email,
+              title: payload.user.displayName,
+              date: payload.timestamp,
+              image: payload.user.photoURL,
+            },
+            video: payload.videoURL,
+            sharedImg: downloadURL,
+            comments: 0,
+            description: payload.description,
+          });
         }
       );
+    } else if (payload.video) {
+      db.collection("article").add({
+        actor: {
+          description: payload.user.email,
+          title: payload.user.displayName,
+          date: payload.timestamp,
+          image: payload.user.photoURL,
+        },
+        video: payload.videoURL,
+        sharedImg: "",
+        comments: 0,
+        description: payload.description,
+      });
     }
   };
 }
